@@ -1,0 +1,312 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.driver-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 0;
+  height: calc(100vh - 120px);
+  background-color: #f4f6f9;
+}
+
+.driver-tab-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.driver-tab-content.live-active {
+  height: calc(100vh - 165px);
+  overflow: hidden;
+}
+
+.driver-tab-content.schedule-active {
+  min-height: calc(100vh - 165px);
+  overflow-y: auto;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 20px;
+  color: #555;
+}
+
+/* Driver 2-Tab Navigation Header */
+.driver-tab-bar {
+  display: flex;
+  background-color: #0b101b;
+  padding: 6px 12px;
+  gap: 8px;
+  border-bottom: 2px solid #1a73e8;
+}
+
+.driver-nav-tab {
+  flex: 1;
+  padding: 10px 16px;
+  background-color: #1a2234;
+  color: #a0aec0;
+  border: 1px solid #2d3748;
+  border-radius: 6px 6px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+}
+
+.driver-nav-tab:hover {
+  background-color: #252f48;
+  color: #ffffff;
+}
+
+.driver-nav-tab.active {
+  background-color: #1a73e8;
+  color: #ffffff;
+  border-color: #1a73e8;
+}
+
+/* 7-Day Schedule View Styling */
+.driver-schedule-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.schedule-header-card {
+  background: white;
+  padding: 18px 24px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  margin-bottom: 20px;
+  border-left: 5px solid #1a73e8;
+}
+
+.bus-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bus-title-row h2 {
+  margin: 0;
+  color: #1a202c;
+  font-size: 1.5rem;
+}
+
+.stops-badge {
+  background-color: #e8f0fe;
+  color: #1a73e8;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.route-path {
+  margin: 8px 0 0 0;
+  color: #4a5568;
+  font-size: 14px;
+}
+
+/* Date Pill Selector */
+.date-picker-scroll {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+.date-pill {
+  flex: 0 0 auto;
+  min-width: 100px;
+  padding: 10px 14px;
+  background: #ffffff !important;
+  color: #2d3748 !important;
+  border: 1px solid #cbd5e0 !important;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.date-pill:hover {
+  border-color: #1a73e8 !important;
+  background-color: #f7fafc !important;
+}
+
+.date-pill .day-name {
+  font-weight: bold;
+  font-size: 13px;
+  color: #2d3748 !important;
+}
+
+.date-pill .day-date {
+  font-size: 11px;
+  color: #718096 !important;
+  margin-top: 2px;
+}
+
+.date-pill.active {
+  background: #1a73e8 !important;
+  color: #ffffff !important;
+  border-color: #1a73e8 !important;
+  box-shadow: 0 3px 8px rgba(26, 115, 232, 0.3);
+}
+
+.date-pill.active .day-name,
+.date-pill.active .day-date {
+  color: #ffffff !important;
+}
+
+.day-name {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.day-date {
+  font-size: 11px;
+  opacity: 0.8;
+  margin-top: 2px;
+}
+
+.pill-dot {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  width: 6px;
+  height: 6px;
+  background-color: #e53e3e;
+  border-radius: 50%;
+}
+
+/* Day Schedule Section & Cards */
+.day-schedule-section h3 {
+  color: #2d3748;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.trips-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.trip-card {
+  background: white;
+  border-radius: 8px;
+  padding: 16px 20px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+  transition: border-color 0.2s;
+}
+
+.trip-card.cancelled {
+  border-left: 5px solid #e53e3e;
+  background-color: #fff5f5;
+}
+
+.trip-card.active {
+  border-left: 5px solid #38a169;
+}
+
+.trip-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.rep-badge {
+  background-color: #edf2f7;
+  color: #4a5568;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.trip-status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.status-tag {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.active-tag {
+  color: #276749;
+}
+
+.cancelled-tag {
+  color: #9b2c2c;
+}
+
+.cancel-action-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cancel-btn {
+  background-color: #fed7d7;
+  color: #9b2c2c;
+}
+
+.cancel-btn:hover:not(:disabled) {
+  background-color: #feb2b2;
+}
+
+.reactivate-btn {
+  background-color: #c6f6d5;
+  color: #22543d;
+}
+
+.reactivate-btn:hover:not(:disabled) {
+  background-color: #9ae6b4;
+}
+
+.cancel-note {
+  margin-top: 8px;
+  color: #742a2a;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .driver-schedule-container {
+    padding: 12px 8px;
+  }
+  .driver-tab-bar {
+    padding: 4px 6px;
+  }
+  .driver-nav-tab {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}

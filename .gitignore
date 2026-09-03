@@ -1,0 +1,8 @@
+backend/node_modules
+frontend/node_modules
+backend/.vercel
+frontend/.vercel
+./temp.txt
+
+frontend/.env
+backend/.env
